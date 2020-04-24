@@ -1,0 +1,46 @@
+{
+    "commands": {
+        "register": {
+            "parametersNumber": 2,
+            "parameterName": [
+                "riotName",
+                "twitchName"
+            ],
+            "validateParam": true
+        },
+        "report": {
+            "parametersNumber": 1,
+            "parameterName":[
+                "text"
+            ],
+            "validateParam": false
+        },
+        "consegui":
+        {
+            "parametersNumber": 0,
+            "parameterName":[
+            ],
+            "validateParam": false
+        },
+        "ping":
+        {
+            "parametersNumber": 0,
+            "parameterName":[
+            ],
+            "validateParam": false
+        },
+        "tft":
+        {
+            "parametersNumber": 0,
+            "parameterName":[
+            ],
+            "validateParam": false
+        }
+
+    },
+    "errors":{
+        "1":"Texto normal",
+        "10":"Isso não é um comando",
+        "11":"O número de parâmetros está errado"
+    }
+}
