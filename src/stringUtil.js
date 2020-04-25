@@ -11,8 +11,8 @@ const tratandoComando = function (texto) {
             if (command.validateParam) {
 
                 if (command.parametersNumber + 1 === arrayCommands.length) {
-                    for (var i = 0; i < command.parametersName.length; i++) {
-                        returnObject[command.parametersName[i]] = arrayCommands[i + 1];
+                    for (var i = 0; i < command.parameterName.length; i++) {
+                        returnObject[command.parameterName[i]] = arrayCommands[i + 1];
                     }
                 } else return {
                     erro: config.errors['11']

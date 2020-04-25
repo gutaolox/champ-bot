@@ -35,6 +35,13 @@
             "parameterName":[
             ],
             "validateParam": false
+        },
+        "graça":
+        {
+            "parametersNumber": 0,
+            "parameterName":[
+            ],
+            "validateParam": false
         }
 
     },
