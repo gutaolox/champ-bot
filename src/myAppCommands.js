@@ -4,6 +4,8 @@ const config = require('../config.json');
 
 const participant = require('./service/participantService');
 
+const excel = require('./excelService');
+
 /**
  * @param {Discord.Message} [msg] msg Recieved
  */
@@ -55,8 +57,7 @@ const commmandRegister = async function (msg, treatedObj) {
         if (!checkParticipant) {
             participant.createParticipant(insertObj);
             msg.reply("Registrado com sucesso.");
-        }
-        else{
+        } else {
             msg.reply("Você já está registrado");
         }
     } catch (e) {
@@ -64,12 +65,25 @@ const commmandRegister = async function (msg, treatedObj) {
         msg.reply('perdão mas ocorreu um erro por favor use !report para notificar os desenvolvedores');
     }
 }
+/**
+ * @param {Discord.Message} [msg] msg Recieved
+ */
+var commandTabela = async function (msg, treatedObj) {
+    var participantArray = await participant.getAllParticipant();
+    console.log(participantArray);
+    await excel.makeSubsTabel(participantArray);
+    msg.author.send({
+        files: ['lekopa.xlsx']
+    });
+}
 
 module.exports = {
     consegui: commandConsegue,
     tft: commandTft,
     ping: commandPing,
     register: commmandRegister,
-    graça: commandGraca
+    graça: commandGraca,
+    tabela: commandTabela
+
 
 }

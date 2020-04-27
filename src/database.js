@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 
-mongoose.connect('mongodb://localhost:27017/champsDb', {
+mongoose.connect('mongodb+srv://lekopa:asdfgh123@cluster0-phqcy.azure.mongodb.net/champsDB?retryWrites=true&w=majority', {
     useNewUrlParser: true
 })
 
@@ -15,7 +15,7 @@ exportObj.createItem = function (model, insertObj) {
 
 exportObj.getItem = async function (model, idFilter) {
     const ctrlModel = mongoose.model(model);
-    const res = await ctrlModel.find((idFilter ? {discordId: idFilter} : {}));
+    const res = await ctrlModel.find((idFilter ? {discordId: idFilter} : {})).sort({createdAt:1});
     return res;
 }
 
