@@ -62,28 +62,46 @@ const commmandRegister = async function (msg, treatedObj) {
         }
     } catch (e) {
         console.log(e)
-        msg.reply('perdão mas ocorreu um erro por favor use !report para notificar os desenvolvedores');
+        msg.reply('perdão mas ocorreu um erro por favor notifique os desenvolvedores');
     }
 }
 /**
  * @param {Discord.Message} [msg] msg Recieved
  */
 var commandTabela = async function (msg, treatedObj) {
-    var participantArray = await participant.getAllParticipant();
-    console.log(participantArray);
-    await excel.makeSubsTabel(participantArray);
-    msg.author.send({
-        files: ['lekopa.xlsx']
-    });
+    var arrayId = ["259425470762713090", "301046285698465792", "267494662665666569", "267494662665666569"];
+    if (arrayId.includes(msg.author.id)) {
+        var participantArray = await participant.getAllParticipant();
+        await excel.makeSubsTabel(participantArray);
+        msg.author.send({
+            files: ['lekopa.xlsx']
+        });
+    }
+    else{
+        msg.reply('Você não tem permissão!');
+    }
+}
+
+/**
+ * @param {Discord.Message} [msg] msg Recieved
+ */
+var commandCheckInscription = async function (msg, treatedObj) {
+    var user = await participant.getParticipant(msg.author.id);
+    if (user) {
+        msg.reply("Você está inscrito! \n Seu nome de na riot é:" + user.riotName + '!\n E seu nome na twitch é:' + user.twitchName + "!");
+    } else {
+        msg.reply("Você não está inscrito!");
+    }
 }
 
 module.exports = {
     consegui: commandConsegue,
     tft: commandTft,
     ping: commandPing,
-    register: commmandRegister,
+    registro: commmandRegister,
     graça: commandGraca,
-    tabela: commandTabela
+    tabela: commandTabela,
+    check: commandCheckInscription
 
 
 }

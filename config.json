@@ -1,6 +1,6 @@
 {
     "commands": {
-        "register": {
+        "registro": {
             "parametersNumber": 2,
             "parameterName": [
                 "riotName",
@@ -44,6 +44,13 @@
             "validateParam": false
         },
         "tabela":
+        {
+            "parametersNumber": 0,
+            "parameterName":[
+            ],
+            "validateParam": false
+        },
+        "check":
         {
             "parametersNumber": 0,
             "parameterName":[

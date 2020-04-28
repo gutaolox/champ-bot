@@ -31,6 +31,12 @@ const tratandoComando = function (texto) {
                 returnObject['content'] = texto.replace(arrayCommands[0] + " ", '');
             }
             return returnObject;
+        } else {
+
+            return {
+                erro: config.errors['10']
+            }
+
         }
 
     }

@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 
 client.on('message', msg => {
-    if (msg.channel.name === 'geral') {
+    if (msg.channel.name === 'geral'|| msg.channel.name === 'inscrição-lekopa') {
         const commandObjs = stringUtil.tratarComando(msg.content);
         if (!commandObjs.erro) {
             commandsActions[commandObjs.command](msg, commandObjs);
