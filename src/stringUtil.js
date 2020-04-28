@@ -12,7 +12,6 @@ const tratandoComando = function (texto) {
             arrayAux.push(arrayCommands[0]);
             var strAux = '';
             for (var i = 1; i < arrayCommands.length - 1; i++) {
-
                 strAux += i == 1 ? arrayCommands[i] : ' ' + arrayCommands[i];
             }
             arrayAux.push(strAux);
