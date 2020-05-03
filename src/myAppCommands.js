@@ -88,7 +88,7 @@ var commandTabela = async function (msg, treatedObj) {
 var commandCheckInscription = async function (msg, treatedObj) {
     var user = await participant.getParticipant(msg.author.id);
     if (user) {
-        msg.reply("Você está inscrito! \n Seu nome de na riot é:" + user.riotName + '!\n E seu nome na twitch é:' + user.twitchName + "!");
+        msg.reply("Você está inscrito! \n Seu nick no lol é:" + user.riotName + '!\n E seu nome na twitch é:' + user.twitchName + "!");
     } else {
         msg.reply("Você não está inscrito!");
     }
