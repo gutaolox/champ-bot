@@ -15,13 +15,6 @@
             ],
             "validateParam": false
         },
-        "consegui":
-        {
-            "parametersNumber": 0,
-            "parameterName":[
-            ],
-            "validateParam": false
-        },
         "ping":
         {
             "parametersNumber": 0,

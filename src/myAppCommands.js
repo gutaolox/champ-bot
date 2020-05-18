@@ -69,7 +69,7 @@ const commmandRegister = async function (msg, treatedObj) {
  * @param {Discord.Message} [msg] msg Recieved
  */
 var commandTabela = async function (msg, treatedObj) {
-    var arrayId = ["259425470762713090", "301046285698465792", "267494662665666569", "267494662665666569"];
+    var arrayId = ["259425470762713090", "301046285698465792", "267494662665666569", "267494662665666569","213147142787694592"];
     if (arrayId.includes(msg.author.id)) {
         var participantArray = await participant.getAllParticipant();
         await excel.makeSubsTabel(participantArray);
